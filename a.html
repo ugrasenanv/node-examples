@@ -1,0 +1,19 @@
+<script
+  type="text/javascript"
+  src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"
+></script>
+<script>
+  function callNode() {
+    $.ajax({
+      cache: false,
+      url: 'http://localhost:8124',
+      data: {},
+      success: function (response, code, xhr) {
+        console.log(response);
+        console.log(code);
+        callNode();
+      },
+    });
+  }
+  callNode();
+</script>
